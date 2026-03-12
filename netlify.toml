@@ -1,0 +1,33 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/demo"
+  to = "/.netlify/functions/cb_demo"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/cb_health"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/register"
+  to = "/.netlify/functions/ver_register"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/issue_nonce"
+  to = "/.netlify/functions/ver_issue_nonce"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/verify"
+  to = "/.netlify/functions/ver_verify"
+  status = 200
+  force = true

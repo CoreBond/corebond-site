@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CoreBond — How it Works</title>
+  <meta name="description" content="Step-by-step view of CoreBond pairing and authentication."/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+  <style>
+    body {
+      background:
+        radial-gradient(900px 600px at 15% -10%, #f3f6ff 0%, transparent 60%),
+        radial-gradient(900px 600px at 85% 0%,  #e8eeff 0%, transparent 55%),
+        #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Header -->
+  <header class="w-full border-b bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tight">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="./assets/corebond_logo_180.png" 
+               srcset="./assets/corebond_logo_240.png 2x" 
+               alt="CoreBond logo" 
+               class="w-auto h-16 md:h-24 lg:h-28"/>
+        </a>
+      </div>
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="how-it-works.html" class="text-blue-700 hover:underline">How it works</a>
+          <a href="why-it-works.html" class="text-blue-700 hover:underline">Why it works</a>
+          <a href="mailto:support@corebond.io" class="text-blue-700 hover:underline">Contact</a>
+          <a href="investors.html" class="text-blue-700 font-bold hover:underline">Investors</a>
+        </nav>
+        <!-- Phone link -->
+        <a href="tel:18442546653"
+           class="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm font-semibold text-blue-700 border-blue-200 hover:bg-blue-50">
+          <span aria-hidden="true">📞</span> 1-844-254-6653
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Image Section -->
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <section class="text-center">
+      <img src="./assets/how-it-works-hero.png" 
+           alt="The Future of Device Trust is Hardware-Born" 
+           class="mx-auto rounded-xl shadow-lg max-w-3xl"/>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="mt-12">
+      <p class="mt-2 text-gray-600 text-center">
+        A step-by-step view of CoreBond pairing and authentication.
+      </p>
+      <div class="mt-8">
+        <img src="./assets/CoreBond_HowItWorks_Diagram.png" 
+             alt="CoreBond pairing diagram" 
+             class="w-full rounded-xl shadow"/>
+      </div>
+      <ol class="mt-6 list-decimal pl-6 space-y-3 text-slate-800 text-left">
+        <li>The device exposes a physically unclonable function that yields a unique response.</li>
+        <li>At first pairing, the owner and device connect with a wire and both generate real random entropy.</li>
+        <li>Both sides derive the same verification value from the PUF response and the entropy.</li>
+        <li>The values are discarded. Nothing is stored and nothing secret is sent on the network.</li>
+        <li>Later, both sides can regenerate the same value on demand for local verification.</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600 text-center space-y-2">
+      <div>📞 1-844-254-6653 &nbsp;|&nbsp; 📍 301 Thelma Dr, Casper, WY 82609</div>
+      <div>© 2025 CoreBond Technologies LLC. CoreBond™ is a trademark of CoreBond Technologies LLC.</div>
+      <div>Trademark class 009 — registration pending with USPTO.</div>
+      <div class="space-x-2">
+        <a href="mailto:support@corebond.io">support@corebond.io</a> •
+        <a href="mailto:invest@corebond.io">invest@corebond.io</a> •
+        <a href="mailto:intro@corebond.io">intro@corebond.io</a> •
+        <a href="https://corebond.io">corebond.io</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

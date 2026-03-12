@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CoreBond — No Keys, Yet Secure</title>
+  <meta name="description" content="CoreBond is an IoT security method that replaces stored or transmitted keys with ephemeral, hardware bound secrets."/>
+  <meta property="og:title" content="CoreBond — No Keys, Yet Secure"/>
+  <meta property="og:description" content="PUF based identity, one time wired entropy pairing, no key storage, no key transmission."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://corebond.io"/>
+  <meta property="og:image" content="./assets/CoreBond_NoKeys_Diagram.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* CoreBond soft radial background */
+    body {
+      background:
+        radial-gradient(900px 600px at 15% -10%, #f3f6ff 0%, transparent 60%),
+        radial-gradient(900px 600px at 85% 0%,  #e8eeff 0%, transparent 55%),
+        #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+<!-- Top Bar -->
+<header class="w-full border-b bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+    <div class="text-2xl font-bold tracking-tight">
+      <a class="flex items-center gap-2" href="index.html">
+        <picture class="inline-block align-middle">
+          <source srcset="./assets/corebond_logo_240.webp 2x, ./assets/corebond_logo_180.webp 1x" type="image/webp"/>
+          <img alt="CoreBond logo" class="w-auto h-16 md:h-24 lg:h-36 xl:h-40" src="./assets/corebond_logo_180.png" srcset="./assets/corebond_logo_240.png 2x"/>
+        </picture>
+      </a>
+    </div>
+    <div class="flex items-center gap-6">
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="how-it-works.html" class="text-blue-700 hover:underline">How it works</a>
+        <a href="why-it-works.html" class="text-blue-700 hover:underline">Why it works</a>
+        <a href="mailto:support@corebond.io?subject=Website%20contact" class="text-blue-700 hover:underline">Contact</a>
+        <a href="investors.html" class="text-blue-700 font-bold hover:underline">Investors</a>
+      </nav>
+      <!-- Phone link -->
+      <a href="tel:18442546653"
+         class="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm font-semibold text-blue-700 border-blue-200 hover:bg-blue-50">
+        <span aria-hidden="true">📞</span> 1-844-254-6653
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-gradient-to-b from-white to-slate-100">
+  <div class="mx-auto max-w-6xl px-4 py-16 grid gap-10 items-center text-center">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        No keys, yet secure.
+      </h1>
+      <p class="mt-5 text-lg text-slate-700">
+        CoreBond replaces stored or transmitted keys with secrets that only exist when needed. 
+        Identity is bound to the hardware using a physically unclonable function and a one time wired entropy exchange at pairing.
+      </p>
+      <div class="mt-6 flex justify-center">
+        <a class="rounded-xl px-5 py-3 bg-slate-900 text-white animate-pulse" href="demo.html">
+          🔑 Run Live Demo
+        </a>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Patent pending.</p>
+    </div>
+  </div>
+</section>
+
+<section class="relative mx-auto max-w-7xl px-0 py-6 md:py-8">
+  <div class="overflow-hidden rounded-2xl shadow">
+    <img alt="Where CoreBond fits — smart home to defense systems banner" class="w-full h-auto block" src="./assets/where-corebond-fits-banner.webp"/>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 class="text-3xl font-bold tracking-tight">Chip to chip across the internet</h2>
+      <p class="mt-3 text-gray-600">Device identity born in silicon, verified across networks without storing or sending a secret.</p>
+    </div>
+    <picture class="block rounded-xl overflow-hidden shadow">
+      <source srcset="./assets/chip_to_chip_globe.webp" type="image/webp"/>
+      <img alt="Globe network representing chip to chip communication across the internet" class="w-full h-auto" src="./assets/chip_to_chip_globe.jpg"/>
+    </picture>
+  </div>
+</section>
+
+<!-- Why it works -->
+<section class="mx-auto max-w-6xl px-4 py-16" id="why">
+  <div class="grid md:grid-cols-2 gap-12 items-start">
+    <div></div>
+    <div>
+      <div class="rounded-2xl border bg-white p-6 shadow-sm">
+        <h3 class="text-xl font-semibold">Analogy</h3>
+        <p class="mt-3 text-slate-700">
+          Picture a combination lock that exists only while you turn the dials, then disappears. Both sides can recreate the pattern on demand, but there is never a written copy to steal.
+        </p>
+      </div>
+      <div class="mt-6 rounded-2xl border bg-white p-6 shadow-sm">
+        <h3 class="text-xl font-semibold">Works with real hardware</h3>
+        <p class="mt-3 text-slate-700">
+          CoreBond can use common PUF types such as SRAM PUFs or arbiter PUFs and can pair over USB, serial, or a simple header.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="bg-slate-100" id="how">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="mx-auto max-w-3xl px-4 py-16" id="contact">
+  <div class="rounded-2xl border bg-white p-8 shadow-sm">
+    <h2 class="text-2xl font-bold">Contact</h2>
+    <p class="mt-2 text-slate-700">Have a pilot in mind or want an engineering brief by email</p>
+    <form class="mt-6 space-y-4" data-netlify="true" method="POST" name="contact">
+      <input type="hidden" name="form-name" value="contact"/>
+      <div>
+        <label class="block text-sm font-medium" for="name">Name</label>
+        <input class="mt-1 w-full rounded-xl border px-3 py-2" id="name" name="name" required/>
+      </div>
+      <div>
+        <label class="block text-sm font-medium" for="email">Email</label>
+        <input class="mt-1 w-full rounded-xl border px-3 py-2" id="email" name="email" type="email" required/>
+      </div>
+      <div>
+        <label class="block text-sm font-medium" for="message">Message</label>
+        <textarea class="mt-1 w-full rounded-xl border px-3 py-2" id="message" name="message" rows="4"></textarea>
+      </div>
+      <button class="rounded-xl bg-slate-900 px-5 py-3 text-white" type="submit">Send</button>
+    </form>
+    <p class="mt-4 text-sm text-slate-500">Or email <a class="underline" href="mailto:support@corebond.io">support@corebond.io</a></p>
+  </div>
+</section>
+
+<footer class="border-t bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600 text-center space-y-2">
+    <div>📞 1-844-254-6653 &nbsp;|&nbsp; 📍 301 Thelma Dr, Casper, WY 82609</div>
+    <div>© 2025 CoreBond Technologies LLC. CoreBond™ is a trademark of CoreBond Technologies LLC.</div>
+    <div>Trademark class 009 — registration pending with USPTO.</div>
+    <div class="space-x-2">
+      <a href="mailto:support@corebond.io">support@corebond.io</a> •
+      <a href="mailto:invest@corebond.io">invest@corebond.io</a> •
+      <a href="mailto:intro@corebond.io">intro@corebond.io</a> •
+      <a href="https://corebond.io">corebond.io</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CoreBond Sandbox badge -->
+<script id="cb-sandbox-badge">
+(function () {
+  try {
+    fetch('/api/health', { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) return;
+      var a = document.createElement('a');
+      a.href = '/demo.html';
+      a.textContent = 'Sandbox online';
+      a.setAttribute('aria-label','Run live demo');
+      a.style.cssText = [
+        'position:fixed','right:16px','bottom:16px','z-index:9999',
+        'padding:10px 14px','border-radius:9999px',
+        'font:600 14px/1.1 system-ui,-apple-system,Segoe UI,Roboto',
+        'background:#10b981','color:#fff','text-decoration:none',
+        'box-shadow:0 4px 16px rgba(0,0,0,.15)'
+      ].join(';');
+      document.body.appendChild(a);
+    });
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

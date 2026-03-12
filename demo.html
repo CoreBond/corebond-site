@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoreBond™ Live Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="robots" content="noindex" />
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Header -->
+  <header class="w-full border-b bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tight">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="./assets/corebond_logo_180.png" 
+               srcset="./assets/corebond_logo_240.png 2x" 
+               alt="CoreBond logo" 
+               class="w-auto h-16 md:h-20 lg:h-24"/>
+        </a>
+      </div>
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="how-it-works.html" class="text-blue-700 hover:underline">How it works</a>
+          <a href="why-it-works.html" class="text-blue-700 hover:underline">Why it works</a>
+          <a href="mailto:support@corebond.io?subject=Website%20contact" class="text-blue-700 hover:underline">Contact</a>
+          <a href="investors.html" class="text-blue-700 font-bold hover:underline" rel="noopener" target="_blank">Investors</a>
+        </nav>
+        <!-- Phone link -->
+        <a href="tel:18442546653"
+           class="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm font-semibold text-blue-700 border-blue-200 hover:bg-blue-50">
+          <span aria-hidden="true">📞</span> 1-844-254-6653
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="mx-auto max-w-3xl px-4 py-12 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 border rounded-full mb-6">
+      <span class="w-2.5 h-2.5 rounded-full bg-green-600"></span>
+      <span class="text-sm">Sandbox online</span>
+    </div>
+
+    <h1 class="text-3xl font-bold mb-2">CoreBond™ Live Demo</h1>
+    <p class="text-slate-600 mb-6">This uses a fresh ephemeral key inside a serverless function. No secrets are stored.</p>
+
+    <p class="mb-6 text-slate-700">
+      Each run creates a brand-new digital identity in memory, uses it once, then destroys it.  
+      Nothing is stored, nothing is transmitted to steal.  
+      This is proof that CoreBond works without keys.
+    </p>
+
+    <div class="border rounded-xl p-6 shadow-sm">
+      <h3 class="text-xl font-semibold mb-4">Pair & Verify (original device)</h3>
+      <button id="demo-button" class="px-4 py-2 rounded-md border bg-white hover:bg-slate-100 font-semibold">
+        Run live demo
+      </button>
+      <pre id="demo-result" class="mt-4 whitespace-pre-wrap text-sm bg-slate-50 p-3 rounded-md border text-left"></pre>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600 text-center space-y-2">
+      <div>📞 1-844-254-6653 &nbsp;|&nbsp; 📍 301 Thelma Dr, Casper, WY 82609</div>
+      <div>© 2025 CoreBond Technologies LLC. CoreBond™ is a trademark of CoreBond Technologies LLC.</div>
+      <div>Trademark class 009 — registration pending with USPTO.</div>
+      <div class="space-x-2">
+        <a href="mailto:support@corebond.io">support@corebond.io</a> •
+        <a href="mailto:invest@corebond.io">invest@corebond.io</a> •
+        <a href="mailto:intro@corebond.io">intro@corebond.io</a> •
+        <a href="https://corebond.io">corebond.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    async function runDemo() {
+      const button = document.getElementById('demo-button');
+      const resultBox = document.getElementById('demo-result');
+      button.textContent = "Running...";
+      button.className = "px-4 py-2 rounded-md border bg-yellow-100 text-yellow-800 font-semibold";
+
+      try {
+        const res = await fetch('/api/demo');
+        if (!res.ok) throw new Error("Network error");
+        const data = await res.json();
+        resultBox.textContent = JSON.stringify(data, null, 2);
+
+        button.textContent = "Success";
+        button.className = "px-4 py-2 rounded-md border bg-green-600 text-white font-semibold";
+      } catch (err) {
+        resultBox.textContent = "Demo failed: " + err.message;
+
+        button.textContent = "Failed";
+        button.className = "px-4 py-2 rounded-md border bg-red-600 text-white font-semibold";
+      }
+
+      // Reset button back to neutral after 5 seconds
+      setTimeout(() => {
+        button.textContent = "Run live demo";
+        button.className = "px-4 py-2 rounded-md border bg-white hover:bg-slate-100 font-semibold";
+      }, 5000);
+    }
+
+    document.getElementById('demo-button').addEventListener('click', runDemo);
+  </script>
+
+</body>
+</html>

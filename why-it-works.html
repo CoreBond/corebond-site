@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CoreBond — Why it Works</title>
+  <meta name="description" content="Why CoreBond authentication works: no stored keys, no transmitted secrets, and hardware-bound trust."/>
+  <meta property="og:title" content="CoreBond — Why it Works"/>
+  <meta property="og:description" content="Authentication without stored keys or transmitted secrets — trust rooted in hardware."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://corebond.io/why-it-works.html"/>
+  <meta property="og:image" content="./assets/puf-image.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* CoreBond soft radial background */
+    body {
+      background:
+        radial-gradient(900px 600px at 15% -10%, #f3f6ff 0%, transparent 60%),
+        radial-gradient(900px 600px at 85% 0%,  #e8eeff 0%, transparent 55%),
+        #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Header -->
+  <header class="w-full border-b bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tight">
+        <a href="index.html" class="flex items-center gap-2">
+          <picture class="inline-block align-middle">
+            <source srcset="./assets/corebond_logo_240.webp 2x, ./assets/corebond_logo_180.webp 1x" type="image/webp"/>
+            <img src="./assets/corebond_logo_180.png"
+                 srcset="./assets/corebond_logo_240.png 2x"
+                 alt="CoreBond logo"
+                 class="w-auto h-16 md:h-24 lg:h-36 xl:h-40"/>
+          </picture>
+        </a>
+      </div>
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="how-it-works.html" class="text-blue-700 hover:underline">How it works</a>
+          <a href="why-it-works.html" class="text-blue-700 hover:underline">Why it works</a>
+          <a href="mailto:support@corebond.io?subject=Website%20contact" class="text-blue-700 hover:underline">Contact</a>
+          <a href="investors.html" class="text-blue-700 font-bold hover:underline" rel="noopener" target="_blank">Investors</a>
+        </nav>
+        <!-- Phone link -->
+        <a href="tel:18442546653"
+           class="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm font-semibold text-blue-700 border-blue-200 hover:bg-blue-50">
+          <span aria-hidden="true">📞</span> 1-844-254-6653
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto px-6 py-12">
+
+    <!-- Centered PUF Diagram -->
+    <section class="text-center mb-12">
+      <img 
+        src="./assets/puf-image.png" 
+        alt="PUF to pairing to verification diagram" 
+        class="mx-auto w-full max-w-3xl h-auto rounded-xl shadow"
+      />
+    </section>
+
+    <!-- Why it Works Content -->
+    <h1 class="text-3xl font-bold tracking-tight mb-8">Why it works</h1>
+    <section class="space-y-8">
+
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight">How CoreBond works</h2>
+        <p class="mt-3 text-gray-700">
+          CoreBond gives secure authentication without storing or sending a secret. 
+          Identity is tied to the one physical chip you own, then a single wired pairing 
+          binds that identity to the owner.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight">Why traditional keys fail</h2>
+        <p class="mt-3 text-gray-700">
+          Most systems keep a key somewhere or send it during login. If an attacker 
+          reads device memory, breaches a database, or captures network traffic, 
+          they can replay or forge access.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight">The CoreBond approach</h2>
+        <div class="mt-4 space-y-5">
+          <div>
+            <h3 class="text-xl font-semibold">Physically unclonable function</h3>
+            <p class="mt-2 text-gray-700">
+              Each chip has tiny manufacturing differences. A PUF reads those 
+              differences as a fingerprint unique to that chip.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">One time physical pairing</h3>
+            <p class="mt-2 text-gray-700">
+              At setup the owner and device connect by wire. Fresh randomness 
+              is bound to the device fingerprint during this step.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Nothing stored, nothing sent</h3>
+            <p class="mt-2 text-gray-700">
+              The verification value exists only during pairing and is never stored 
+              or transmitted. Later checks recreate what is needed inside each side 
+              without pulling a stored key or exposing a reusable secret.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight">Why it works</h2>
+        <p class="mt-3 text-gray-700">
+          There is no key file, certificate, or cloud database to steal. Copying code 
+          is useless without the exact chip. Pairing happens once over a wire, so 
+          remote interception yields nothing. Captured traffic cannot be replayed 
+          because there is no reusable secret on the wire.
+        </p>
+        <ul class="mt-4 list-disc pl-6 space-y-2">
+          <li>No attack surface for key theft.</li>
+          <li>Hardware dependency ties identity to the device.</li>
+          <li>One time physical pairing.</li>
+          <li>Replay proof traffic.</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600 text-center space-y-2">
+      <div>📞 1-844-254-6653 &nbsp;|&nbsp; 📍 301 Thelma Dr, Casper, WY 82609</div>
+      <div>© 2025 CoreBond Technologies LLC. CoreBond™ is a trademark of CoreBond Technologies LLC.</div>
+      <div>Trademark class 009 — registration pending with USPTO.</div>
+      <div class="space-x-2">
+        <a href="mailto:support@corebond.io">support@corebond.io</a> •
+        <a href="mailto:invest@corebond.io">invest@corebond.io</a> •
+        <a href="mailto:intro@corebond.io">intro@corebond.io</a> •
+        <a href="https://corebond.io">corebond.io</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

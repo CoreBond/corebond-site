@@ -1,0 +1,2 @@
+Contact: mailto:intro@corebond.io
+Encryption: https://corebond.io/pgp
